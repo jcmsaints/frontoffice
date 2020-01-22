@@ -1,0 +1,27 @@
+<%- contentFor('body') %>
+
+<div class="row jumbotron">
+  <div class="col-lg text-center">
+    <h2>Dados do Utilizador</h2>
+  </div>
+</div>
+<div class="row">
+  <div
+    style="
+  margin-top: 5%;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 5%;
+  "
+    class="col-lg"
+  >
+    <div class="form-group">
+      <label for="exampleInputEmail1">Endereço de Email</label>
+      <label class="form-control"><%= user.email %></label>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Username</label>
+      <label class="form-control"><%= user.username %></label>
+    </div>
+  </div>
+</div>

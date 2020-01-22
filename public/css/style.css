@@ -1,0 +1,59 @@
+html,
+body {
+  height: 100%;
+}
+nav {
+  height: 10%;
+}
+.centerDiv {
+  display: flex;
+  justify-content: center;
+}
+.container-fluid {
+  height: 100%;
+  overflow-y: hidden; /* don't show content that exceeds my height */
+}
+.main {
+  height: 90%;
+  font: 100% Roboto, sans-serif;
+  background: url(https://wallpapercave.com/wp/aZlqiAT.png) 50% 50% no-repeat;
+  background-size: cover;
+  background-color: #e5e5e5;
+  background-attachment: fixed;
+}
+.menuIcon {
+  color: white;
+  width: 25%;
+}
+.backgroundWhite {
+  height: calc(100% - 75px);
+  background-color: white;
+  opacity: 0.9;
+  margin-top: 2%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.greenSimbol {
+  color: green;
+  background-color: #ced4da !important;
+}
+.inputValue {
+  background-color: #f5f7fa !important;
+}
+footer {
+  height: 50px;
+}
+.contentInBox {
+  margin-right: 3%;
+  margin-left: 3%;
+}
+.btn-right {
+  float: right;
+}
+#example_wrapper {
+  margin-left: 5%;
+  margin-right: 8%;
+}

@@ -1,0 +1,51 @@
+<%- contentFor('body') %>
+
+<div class="row jumbotron">
+  <div class="col-lg">
+    <label for="expenseInput">Total de Despesas Anuais</label>
+    <div id="expenseInput" class="input-group mb-3 centerDiv">
+      <div class="input-group-prepend">
+        <span class="greenSimbol input-group-text"><b>€</b></span>
+      </div>
+      <div class="input-group-append">
+        <span class="inputValue input-group-text"><%= totalExpense %></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg">
+    <div id="chart"></div>
+    <script>
+      var columns = [];
+    </script>
+    <% expenseChart.forEach(function(expense) { %>
+    <script>
+      var row = [];
+      row.push("<%=expense.label%>");
+      row.push(<%=expense.sum%>);
+      columns.push(row);
+    </script>
+    <% }) %>
+
+    <script>
+      console.log(columns);
+      var chart = c3.generate({
+        data: {
+          // iris data from R
+          columns: columns,
+          type: "pie",
+          onclick: function(d, i) {
+            console.log("onclick", d, i);
+          },
+          onmouseover: function(d, i) {
+            console.log("onmouseover", d, i);
+          },
+          onmouseout: function(d, i) {
+            console.log("onmouseout", d, i);
+          }
+        }
+      });
+    </script>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<%- contentFor('body') %>
+<div
+  style="
+margin-top: 5%;
+margin-left: 3%;
+margin-right: 3%;
+margin-bottom: 5%;
+"
+>
+  <form id="mainForm"  action="/newexpense" method="POST">
+    <div class="form-group">
+      <div class="row">
+        <div class="col">
+          <label for="expense">Despesa(*)</label>
+          <input
+            type="number"
+            name="value"
+            class="form-control required"
+            id="expense"
+            placeholder="5.00"
+          />
+        </div>
+        <div class="col">
+          <label for="datepicker">Data(*)</label>
+          <input
+            type="text"
+            readonly
+            id="datepicker"
+            name ="date"
+            class="form-control required"
+            placeholder="11/w01/2020"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="expenseCategory">Categoria Despesa(*)</label>
+      <select class="form-control" name ="categoryName" id="expenseCategory">
+        <% categoryList.forEach(function(category) { %>
+        <option><%= category.name %></option>
+
+        <% }) %>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="description">Descrição</label>
+      <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+    </div>
+    <input
+    type="text"
+    name="imagepath" hidden id="imageSrc"
+  />
+  </form>
+  <form id="fileForm" class="form-group">
+    <label for="bill">Foto de Fatura</label>
+    <input name="files" type="file" class="form-control-file" id="bill" />
+  </br>
+    <div class="form-group">
+      <label>* - campo obrigatório</label>
+    </div>
+  </form>
+
+  <div class="form-group">
+    <button type="button" onclick="createExpense();" class="btn btn-success">Criar</button>
+  </div>
+  <script>
+    addDatePicker("#datepicker");
+  </script>
+</div>
